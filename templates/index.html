@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>Track Your Expenses</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
     
     <form action="/add" method="POST">
         <label for="item">Expense Name:</label>
