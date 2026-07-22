@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Expense Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Track Your Expenses</h1>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
-</body>
     
     <form action="/add" method="POST">
         <label for="item">Expense Name:</label>
@@ -20,5 +18,27 @@
 
         <button type="submit">Add Expense</button>
     </form>
+
+    <h2>Logged Expenses</h2>
+    <table border="1" style="margin-top: 20px; text-align: left; width: 300px; background: white; border-collapse: collapse; padding: 8px;">
+        <thead>
+            <tr>
+                <th style="padding: 8px;">Item</th>
+                <th style="padding: 8px;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td style="padding: 8px;">{{ expense['item'] }}</td>
+                <td style="padding: 8px;">${{ expense['amount'] }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="2" style="padding: 8px; text-align: center;">No expenses recorded yet!</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
