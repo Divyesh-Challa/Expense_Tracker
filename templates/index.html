@@ -20,11 +20,12 @@
     </form>
 
     <h2>Logged Expenses</h2>
-    <table border="1" style="margin-top: 20px; text-align: left; width: 300px; background: white; border-collapse: collapse; padding: 8px;">
+    <table border="1" style="margin-top: 20px; text-align: left; width: 360px; background: white; border-collapse: collapse;">
         <thead>
             <tr>
                 <th style="padding: 8px;">Item</th>
                 <th style="padding: 8px;">Amount</th>
+                <th style="padding: 8px;">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -32,10 +33,15 @@
             <tr>
                 <td style="padding: 8px;">{{ expense['item'] }}</td>
                 <td style="padding: 8px;">${{ expense['amount'] }}</td>
+                <td style="padding: 8px;">
+                    <form action="/delete/{{ expense['id'] }}" method="POST" style="padding: 0; margin: 0; box-shadow: none; width: auto; background: none;">
+                        <button type="submit" style="margin: 0; padding: 4px 8px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer;">Delete</button>
+                    </form>
+                </td>
             </tr>
             {% else %}
             <tr>
-                <td colspan="2" style="padding: 8px; text-align: center;">No expenses recorded yet!</td>
+                <td colspan="3" style="padding: 8px; text-align: center;">No expenses recorded yet!</td>
             </tr>
             {% endfor %}
         </tbody>
