@@ -1,0 +1,121 @@
+:root {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+    --border-color: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
+  
+  h1, h2 {
+    margin: 0 0 16px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  
+  label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+  
+  input {
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  input:focus {
+    border-color: var(--primary);
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: white;
+    width: 100%;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .btn-danger {
+    background-color: transparent;
+    color: var(--danger);
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .btn-danger:hover {
+    background-color: #fef2f2;
+  }
+  
+  .expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .expense-item:last-child {
+    border-bottom: none;
+  }
+  
+  .expense-title {
+    font-weight: 500;
+  }
+  
+  .expense-amount {
+    font-weight: 600;
+  }
